@@ -4,10 +4,10 @@ TIMEOUT = 60
 
 
 class EchoUDPProtocol(asyncio.DatagramProtocol):
-    def connection_made(self, transport):
+    def connection_made(self, transport): # This is some kind of overload
         self.transport = transport
 
-    def datagram_received(self, data, addr):
+    def datagram_received(self, data, addr): # this is also some kind of overload
         message = data.decode()
         print(f"Received {message} from {addr}")
         # Echoing back the received message
